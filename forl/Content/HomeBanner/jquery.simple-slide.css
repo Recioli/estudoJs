@@ -1,0 +1,50 @@
+ul.simpleSlider, ul.simpleSlider > *
+{
+    margin: 0;
+    padding: 0;
+}
+
+ul.simpleSlider
+{
+    list-style-type: none;
+    width: 430px;
+    height: 290px;
+    display: table;
+}
+
+    ul.simpleSlider li
+    {
+
+        width: 432px;
+        height: 292px;
+        display: none;
+        position: absolute;
+
+        text-align: center;
+    }
+
+    ul.simpleSlider .slide-body
+    {
+
+        position: relative;
+        width: 430px;
+        height: 290px;
+        vertical-align: middle;
+    }
+
+
+    ul.simpleSlider li img
+    {
+        border-top: 1px solid #aaa;
+        border-right: 1px solid #aaa;
+        border-bottom: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 430px;
+        max-height: 290px;
+    }

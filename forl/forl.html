@@ -1,0 +1,603 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>FORL - Fundação Otorrinolaringologia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/Content/cssAreaAberta/imagens/favicon.ico" type="image/png" />
+
+    <link href="/Content/cssAreaAberta/css/jquery-ui-1.10.3.custom.css" rel="stylesheet"/>
+<link href="/Content/cssAreaAberta/bootstrap.css" rel="stylesheet"/>
+<link href="/Content/css/font-awesome-min.css" rel="stylesheet"/>
+<link href="/Content/cssAreaAberta/css/estilo_site.css" rel="stylesheet"/>
+<link href="/Content/cssAreaAberta/css/jquery.fancybox.css" rel="stylesheet"/>
+<link href="/Content/cssAreaAberta/css/jquery.simple-slide.css" rel="stylesheet"/>
+<link href="/Content/cssAreaAberta/css/nav.css" rel="stylesheet"/>
+<link href="/Content/cssAreaAberta/css/plugin.css" rel="stylesheet"/>
+
+    <script src="/Scripts/bootstrap/jquery-1.10.2-min.js"></script>
+<script src="/Scripts/bootstrap/bootstrap.js"></script>
+<script src="/Scripts/bootstrap/jquery.bootstrap-tab-static.js"></script>
+<script src="/Scripts/bootstrap/jquery.cookie.js"></script>
+<script src="/Scripts/bootstrap/jquery.funcoes.js"></script>
+<script src="/Scripts/bootstrap/jquery.funcoesLayout.js"></script>
+<script src="/Scripts/bootstrap/jquery.loadingFade.js"></script>
+<script src="/Scripts/bootstrap/jquery.maskedinput.js"></script>
+<script src="/Scripts/bootstrap/jquery.simple-slide.js"></script>
+<script src="/Scripts/bootstrap/jquery.turn-off-validation.js"></script>
+<script src="/Scripts/bootstrap/jquery.unobtrusive-ajax-min.js"></script>
+<script src="/Scripts/bootstrap/jquery.validate-min.js"></script>
+<script src="/Scripts/bootstrap/jquery.validate.unobtrusive-min.js"></script>
+<script src="/Scripts/bootstrap/modernizr-2.6.2.js"></script>
+<script src="/Scripts/bootstrap/adicionarRemoverCampos.js"></script>
+<script src="/Scripts/bootstrap/app.data.js"></script>
+<script src="/Scripts/bootstrap/app.js"></script>
+<script src="/Scripts/bootstrap/app.plugin.js"></script>
+<script src="/Scripts/bootstrap/bootbox.js"></script>
+<script src="/Scripts/bootstrap/jquery-ui-1.10.4.custom.js"></script>
+<script src="/Scripts/bootstrap/jquery-ui-timepicker-addon.js"></script>
+<script src="/Scripts/bootstrap/jquery-ui-timepicker-pt-BR.js"></script>
+<script src="/Scripts/bootstrap/jquery-ui-timepicker.js"></script>
+<script src="/Scripts/bootstrap/CustomValidation.js"></script>
+<script src="/Scripts/bootstrap/select2-min.js"></script>
+<script src="/Scripts/bootstrap/underscore-min.js"></script>
+<script src="/Scripts/bootstrap/validationOverride.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="/Scripts/bootstrap/ie/excanvas.js"></script>
+<script src="/Scripts/bootstrap/ie/html5.js"></script>
+<script src="/Scripts/bootstrap/ie/respond-min.js"></script>
+
+        <link href="/Content/cssAreaAberta/css/ie.css" rel="stylesheet"/>
+
+    <![endif]-->
+
+    <style type="text/css">
+        .whatsapp {
+            position: fixed;
+            top: 87%;
+            right: 1%;
+            padding: 10px;
+            z-index: 10000000;
+        }
+    </style>
+    <style type="text/javascript">
+
+        .container {
+            width: 970px;
+            max-width: none !important;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+    </script>
+    <script type="text/javascript" src="/Scripts/scriptAreaAberta/tinynav.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // TinyNav.js 1
+            $('#nav').tinyNav({
+                active: 'selected',
+                roots: ["/", "default.asp", "index.php"]
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="/Scripts/scriptAreaAberta/placeholder.js"></script>
+    <script type="text/javascript" src="/Scripts/scriptAreaAberta/ddsmoothmenu.js"></script>
+    <script type="text/javascript">
+        ddsmoothmenu.init({
+            mainmenuid: "smoothmenu1", //menu DIV id
+            orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+            classname: 'ddsmoothmenu', //class added to menu's outer DIV
+            //customtheme: ["#1c5a80", "#18374a"],
+            contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+        })
+    </script>
+    <script type="text/javascript" src="/Scripts/scriptAreaAberta/jquery.area-aberta.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.logado_popup').show();
+
+            var timer;
+            $("#usuario_menu_wrapper").hover(function () { //
+                if (timer) {
+                    clearTimeout(timer);
+                }
+
+                timer = setTimeout(function () {
+                    $(".menu_usuario").show(300);
+                    $('.logado_popup').hide();
+                }, 200);
+
+            }, function () {
+
+                timer = setTimeout(function () {
+
+                    $(".menu_usuario").hide(300);
+                    $('.logado_popup').show();
+
+                }, 400);
+
+            });
+
+        });
+    </script>
+
+    <!-- Slider -->
+    <link type="text/css" rel="stylesheet" href="/Content/cssAreaAberta/css/skdslider.css?v=1" />
+    <script type="text/javascript" src="/Scripts/slider/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="/Scripts/slider/skdslider.js"></script>
+    <!-- FIM slider -->
+</head>
+<body>
+    <div class="site">
+        <div class="topo">
+            <div class="logo-forl">
+                <a href="/">FORL - Fundação Otorrinolaringologia</a>
+            </div>
+            <div class="topo_col2">
+<form action="/Home/Logar" class="form_login" method="post"><input id="ReturnUrl" name="ReturnUrl" type="hidden" value="" />                        <input id="EmailLogin" name="Email" class="campo_texto" type="text" value="E-mail" />
+                        <input id="Senha" name="Senha" class="campo_texto" type="password" value="Senha" />
+                        <input class="bt" type="submit" name="" value="OK" />
+                        <p><a class="cadastro" href="/Membro/FormaCadastro">Cadastrar-se</a></p>
+                        <p><a href="/Login">Esqueceu a senha?</a></p>
+</form>            </div>
+            <!-- FIM topo_col2> -->
+            <div class="menu ddsmoothmenu" id="smoothmenu1">
+                <ul id="nav">
+                    <li>
+                        <a href="#">Forl</a>
+                        <ul>
+                            <li><a href="/Texto/Fundacao">Funda&#231;&#227;o Otorrino</a></li>
+                            <li style="padding-left: 30px;"><a href="/Texto/Fundacao#26">Miss&#227;o</a></li>
+                            <li style="padding-left: 30px;"><a href="/Texto/Fundacao#28">Vis&#227;o</a></li>
+                            <li style="padding-left: 30px;"><a href="/Texto/Fundacao#29">Valores</a></li>
+                            <li><a href="/Texto/Diretoria">Diretoria</a></li>
+                            <li><a href="/Texto/ConselhoCurador">Conselho Curador</a></li>
+                            <li><a href="/Texto/Representacoes">Representa&#231;&#245;es Brasil</a></li>
+                                <li><a href="/PerfilDoMes/PerfilMes">Perfil do M&#234;s</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Ensino</a>
+                        <ul>
+                            <li><a href="/Texto/LinhasPesquisa">Linhas de Pesquisa</a></li>
+                            <li><a href="/Texto/Biblioteca">Biblioteca</a></li>
+                                <li><a href="/Texto/SeminariosFMUSP">Semin&#225;rios FMUSP</a></li>
+                                <li><a href="/Texto/TermosConsentimento">Termos de Consentimento</a></li>
+                                <li><a href="/Loja/1">Materiais Did&#225;ticos</a></li>
+                            <li><a href="http://e-learningforl.com.br/" target="_blank">Plataforma EAD</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Publica&#231;&#245;es</a>
+                        <ul>
+                            <li><a href="https://forl.org.br/Noticia/ViewNoticia/10649" target="_blank">Anais do Congresso da FORL</a></li>
+                                <li><a href="http://www.thieme.com/iao" target="_blank">International Archives of Otorhinolaryngology</a></li>
+                            <li><a href="http://www.internationalarchivesent.org/" target="_blank">Int Arch Otorhinolaryngol - edi&#231;&#245;es antigas</a></li>
+                            <li><a href="https://forl.org.br/Loja/1" target="_blank">Livros</a></li>
+                                <li><a href="http://www.otorrinousp.org.br/siteposotorrino/producao_cientifica.asp">Produ&#231;&#227;o Cient&#237;fica - ORL USP</a></li>
+                                <li><a href="/Texto/RevistaOuvirBem">Revista - Ouvir Bem</a></li>
+                                <li><a href="/Texto/RevistaTurmaDoBentinho">Revista - Turma do Bentinho</a></li>
+                            <li><a href="http://www.scielo.br/scielo.php?script=sci_serial&pid=1809-4864&lng=en&nrm=iso" target="_blank">Revista Scielo International Archives of Otorhinolaryngology</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Servi&#231;os</a>
+                        <ul>
+                            <li><a href="/Texto/CentroAudiologico">Centro Audiol&#243;gico</a></li>
+                            <li><a href="/Texto/CentroPesquisa">Centro de Pesquisa</a></li>
+                            <li><a href="/AcaoSocial/Publicadas">A&#231;&#245;es Sociais</a></li>
+                                <li><a href="/InformacaoDoenca/Publicadas">Informa&#231;&#245;es Sobre Doen&#231;as</a></li>
+                            <li><a href="/Texto/Inovacoes">Inova&#231;&#245;es</a></li>
+                            <li><a href="https://forl.org.br/gapz?id=340">Gapz</a></li>
+                        </ul>
+                    </li>
+                        <li>
+                            <a href="#">Links &#218;teis</a>
+                            <ul>
+                                <li><a href="/Texto/CID10">Cid 10</a></li>
+                                <li><a href="http://www.otorrinousp.org.br/" target="_blank">Otorrino USP</a></li>
+                                <li><a href="/Texto/LinksORL">Links ORL/Fono</a></li>
+                                <li><a href="/Texto/LinksPesquisa">Links de Pesquisa</a></li>
+                                <li><a href="/Texto/PesquisaBibliografica">Pesquisa Bibliogr&#225;fica</a></li>
+                                <li><a href="http://lattes.cnpq.br/" target="_blank">Curr&#237;culo Lattes</a></li>
+                            </ul>
+                        </li>
+                    <li><a href="/Contato">Contato</a></li>
+                </ul>
+            </div>
+            <!-- Fim menu 01 -->
+        </div>
+
+        <!-- FIM topo -->
+        <div class="col-lg-12">
+            <a href="https://api.whatsapp.com/send?l=pt_br&phone=5511976461654"
+               target="_blank">
+                <img class="whatsapp" src="https://images.tcdn.com.br/static_inst/integracao/imagens/whatsapp.png" height="70" width="70" />
+            </a>
+        </div>
+        <ul class="menu2">
+            <li class="menu-nacional"><a href="/Curso_listar">Cursos</a></li>
+            <li class="menu-nacional"><a href="/Congresso_listar">Congressos</a></li>
+
+            <li class="menu-nacional"><a href="/MembroBenemerito">Membro Benem&#233;rito</a></li>
+        </ul>
+<ul class="idioma">
+    <li class=" idioma_pt">
+        <a href="/Home/TrocarLinguagem?id=pt-BR">Sou Brasileiro</a>
+    </li>
+    <li>
+        <span>&nbsp;</span>
+        <a href="/Home/TrocarLinguagem?id=en-US">I am foreigner</a>
+    </li>
+</ul>        <div class="conteudo">
+            <!-- Fim Menu 02 -->
+            <div class="row">
+                <div class="margin_bottom">
+                                                                            </div>
+
+<ul class="banner_fixo">
+        <li class="banner-wrapper">
+            <a href="https://www.congressoforl.org/ " target="_blank" id="bannerLogo">
+                <img src="/Content/HomeBanner/banner_congresso-637723324557270832.jpg" alt="banner fixo" />
+            </a>
+        </li>
+        <li class="banner-wrapper">
+            <a href="http://www.politzermeeting2022.org/ " target="_blank" id="bannerLogo">
+                <img src="/Content/HomeBanner/banner_site_prancheta_2-637837200414026421.jpg" alt="banner fixo" />
+            </a>
+        </li>
+        <li class="banner-wrapper">
+            <a href="https://forl.org.br/gapz?id=340" target="_blank" id="bannerLogo">
+                <img src="/Content/HomeBanner/banner_gapz2-01-637502890232126663.jpg" alt="banner fixo" />
+            </a>
+        </li>
+        <li class="banner-wrapper">
+            <a href="http://e-learningforl.com.br/" target="_blank" id="bannerLogo">
+                <img src="/Content/HomeBanner/ead-637800143162713615.jpg" alt="banner fixo" />
+            </a>
+        </li>
+</ul>
+
+
+<div id="containerPopup" class="bootbox modal fade bootbox-confirm in" tabindex="-1" role="dialog" style="display: none;" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="bootbox-close-button close" style="margin-top: -10px;">×</button>
+                <span>Você quer certificado dessa aula?</span>
+            </div>
+            <div class="modal-footer">
+                <div class="col-lg-6 text-left">
+                    <a id="botaoEsquerdo" href="" type="button" class="btn btn-default text-left"></a>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <a id="botaoDireito" href="" type="button" class="btn btn-primary text-right"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" style="overflow: hidden">
+    <div class="col-md-8 col-sm-12">
+        <div class="skdslider">
+            <ul id="demo1" class="slides">
+                    <li>
+                        <a class="more" href="/Noticia/ViewNoticia/11775">
+                            <img src="/Content/Noticia/folder.jpg-637865881568491009.jpg" class="lazy img-responsive" data-original="/Content/Noticia/folder.jpg-637865881568491009.jpg" />
+                            <!--Slider Description example-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="more" href="/Noticia/ViewNoticia/11774">
+                            <img src="/Content/Noticia/capa_voz_prancheta_1-637865739205474734.jpg" class="lazy img-responsive" data-original="/Content/Noticia/capa_voz_prancheta_1-637865739205474734.jpg" />
+                            <!--Slider Description example-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="more" href="/Noticia/ViewNoticia/11773">
+                            <img src="/Content/Noticia/capa-05-637853687238835004.jpg" class="lazy img-responsive" data-original="/Content/Noticia/capa-05-637853687238835004.jpg" />
+                            <!--Slider Description example-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="more" href="/Noticia/ViewNoticia/11772">
+                            <img src="/Content/Noticia/capa-637844017438413262.jpg" class="lazy img-responsive" data-original="/Content/Noticia/capa-637844017438413262.jpg" />
+                            <!--Slider Description example-->
+                        </a>
+                    </li>
+                    <li>
+                        <a class="more" href="/Noticia/ViewNoticia/11771">
+                            <img src="/Content/Noticia/capa-637836353283664724.jpg" class="lazy img-responsive" data-original="/Content/Noticia/capa-637836353283664724.jpg" />
+                            <!--Slider Description example-->
+                        </a>
+                    </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="col-lg-4 col-sm-12">
+        <div class="home_cursos dtq_bg">
+            <h2><a href="/Curso_listar">Pr&#243;ximos cursos</a></h2>
+            <div class="proximos_cursos">
+                    <p><a class="azul" href="/Curso_detalhes/2641">Programa de aprimoramento de curta dura&#231;&#227;o para m&#233;dicos e fonoaudi&#243;logos</a></p>
+                    <p><a class="azul" href="/Curso_detalhes/2632">XII Oficina de reabilita&#231;&#227;o de pacientes usu&#225;rios de implante coclear</a></p>
+                    <p><a class="azul" href="/Curso_detalhes/2644">XVI Curso de Potenciais Evocados Auditivos: Curso te&#243;rico pr&#225;tico</a></p>
+                    <p><a class="azul" href="/Curso_detalhes/2622">113&#186; Curso de Cirurgias Endosc&#243;picas Endonasais - FORL-BA</a></p>
+                    <p><a class="azul" href="/Curso_detalhes/2642">Otoneurologia &amp; CIA - Tontura: Como eu fa&#231;o?</a></p>
+                    <p><a class="azul" href="/Curso_detalhes/2643">24&#176; Curso Te&#243;rico Pr&#225;tico de Ronco e Apneia Obstrutiva do Sono </a></p>
+                    <p><a class="azul" href="/Curso_detalhes/2653">Pr&#243;tese Auditiva: Tudo que o M&#233;dico Otorrinolaringologista precisa saber - 2&#186; Edi&#231;&#227;o</a></p>
+                    <p><a class="azul" href="/Curso_detalhes/2640">REABILITA&#199;&#195;O DA VOZ E FALA: Usu&#225;rios de Implante Coclear e A.A.S.I</a></p>
+                    <p><a class="azul" href="/Curso_detalhes/2639">INTERFACE ENTRE AS ALTERA&#199;&#213;ES DE VOZ E DEGLUTI&#199;&#195;O: OTIMIZANDO A FONOTERAPIA </a></p>
+                    <p><a class="azul" href="/Curso_detalhes/2646">8&#186; Curso de Dissec&#231;&#227;o do Osso Temporal em POA</a></p>
+            </div>
+            <p class="bt_mais"><a><a href="/Curso_listar">[+] Mais Cursos</a></a></p>
+        </div>
+    </div>
+</div>
+<!-- FIM home_cursos -->
+<div class="row">
+    <div class="col-md-8 col-sm-12">
+        <div class="home_noticias dtq_bg">
+            <div class="pesquisa_noticia">
+                <p>Pesquisa not&#237;cia por data</p>
+<form action="/Noticia/Publicadas" method="get">                    <select name="mes" class="mes">
+                        <option value="">Todos</option>
+                        <option value="1">Janeiro</option>
+                        <option value="2">Fevereiro</option>
+                        <option value="3">Mar&#231;o</option>
+                        <option value="4">Abril</option>
+                        <option value="5">Maio</option>
+                        <option value="6">Junho</option>
+                        <option value="7">Julho</option>
+                        <option value="8">Agosto</option>
+                        <option value="9">Setembro</option>
+                        <option value="10">Outubro</option>
+                        <option value="11">Novembro</option>
+                        <option value="12">Dezembro</option>
+                    </select>
+                    <select name="ano" class="ano">
+                        <option value="" selected>Todos</option>
+                            <option value="2022" >2022</option>
+                            <option value="2021" >2021</option>
+                            <option value="2020" >2020</option>
+                            <option value="2019" >2019</option>
+                            <option value="2018" >2018</option>
+                            <option value="2017" >2017</option>
+                            <option value="2016" >2016</option>
+                            <option value="2015" >2015</option>
+                            <option value="2014" >2014</option>
+                            <option value="2013" >2013</option>
+                            <option value="2012" >2012</option>
+                            <option value="2011" >2011</option>
+                            <option value="2010" >2010</option>
+                            <option value="2009" >2009</option>
+                            <option value="2008" >2008</option>
+                            <option value="2007" >2007</option>
+                            <option value="2006" >2006</option>
+                            <option value="2005" >2005</option>
+                            <option value="2004" >2004</option>
+                            <option value="2003" >2003</option>
+                            <option value="2002" >2002</option>
+                            <option value="2001" >2001</option>
+                    </select>
+                    <input class="bt" type="submit" name="" value="OK" />
+</form>            </div>
+            <!-- FIM pesquisa_noticia -->
+            <h2><a href="/Noticia/Publicadas">Hist&#243;rico de Not&#237;cias</a></h2>
+                <div class="noticia_dtq">
+                        <a href="/Noticia/ViewNoticia/11775">
+                            <img height="80px" width="80px" src="/Content/Noticia/folder.jpg-637865881568491009.jpg" />
+                        </a>
+                    <div class="data_noticia_dtq">26/04/2022</div>
+                    <h3><a href="/Noticia/ViewNoticia/11775">A Sociedade Brasileira Microcirurgia Reconstrutiva e o Instituto de Ortopedia e Traumatologia do Hc da Usp, Est&#227;o Organizando o 4&#186; Encontro de Microcirurgia</a></h3>
+                    <p>Ser&#225; Realizado nos Dias 20 e 21 de Maio de 2022, em S&#227;o Paulo, no Instituto de Ortopedia</p>
+                </div>
+                <div class="noticia_dtq">
+                        <a href="/Noticia/ViewNoticia/11774">
+                            <img height="80px" width="80px" src="/Content/Noticia/capa_voz_prancheta_1-637865739205474734.jpg" />
+                        </a>
+                    <div class="data_noticia_dtq">26/04/2022</div>
+                    <h3><a href="/Noticia/ViewNoticia/11774">16 de Abril Foi Dia Mundial da Voz</a></h3>
+                    <p>Veja o Que a Dra. Adriana Hachiya e o Dr. Rui Imamura Falaram na M&#237;dia Neste Dia</p>
+                </div>
+                <div class="noticia_dtq">
+                        <a href="/Noticia/ViewNoticia/11773">
+                            <img height="80px" width="80px" src="/Content/Noticia/capa-05-637853687238835004.jpg" />
+                        </a>
+                    <div class="data_noticia_dtq">12/04/2022</div>
+                    <h3><a href="/Noticia/ViewNoticia/11773">Fonoterapia na Cl&#237;nica Vocal:  o Que o Fonoaudi&#243;logo(a) Precisa Saber</a></h3>
+                    <p>Aconteceu no &#218;ltimo S&#225;bado (09/04)</p>
+                </div>
+            <p class="bt_mais"><a href="/Noticia/Publicadas">[+] Mais Not&#237;cias</a></p>
+        </div>
+    </div>
+    <!-- FIM home_noticias -->
+    <div class="col-md-4 col-sm-12">
+        <div style="padding: 0px; margin: 0px;">
+            <a href="https://digital.bibliotecaorl.org.br/" target="_blank">
+                <img class="img-responsive img_revista_internacional_archives" src="/imagens_home/banner_biblioteca_digital.png" />
+            </a>
+        </div>
+        <div>
+            <a href="http://www.thieme.com/iao" target="_blank">
+                <img class="img-responsive img_revista_internacional_archives" src="/imagens_home/banner_thieme.png" />
+            </a>
+        </div>
+    </div>
+    <!-- FIM home_revista_internacional_archives -->
+</div>
+
+    <div class="dtq_bg_clean home_banner">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="dtq_bg">
+                    <a href="/MembroBenemerito">
+                        <img class="img-responsive" src="/imagens_home/banner_benemerito.png?v=2" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <div class="dtq_bg">
+                    <a href="/Loja/1">
+                        <img class="img-responsive" src="/imagens_home/banner_loja.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="home_parceiros dtq_bg">
+    <h2><a href="#">Sites Parceiros</a></h2>
+    <ul>
+            <li>
+                <a href="http://www.neurinoma.org.br/" target="_blank">
+                    <img src="/Content/ParceriaBanner/banner_neurinoma-635670233081247655.png" alt="Neurinoma" />
+                </a>
+            </li>
+            <li>
+                <a href="http://sinusite.org.br/" target="_blank">
+                    <img src="/Content/ParceriaBanner/banner_sinusite-635670233601367109.png" alt="Sinusite" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.surdez.org.br/" target="_blank">
+                    <img src="/Content/ParceriaBanner/banner_surdez-635670233933381458.png" alt="Surdez" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.zumbido.org.br/" target="_blank">
+                    <img src="/Content/ParceriaBanner/banner_zumbido-635670234233441541.png" alt="Zumbido" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.paralisiafacial.org.br/" target="_blank">
+                    <img src="/Content/ParceriaBanner/banner_paralisia-635670234537132035.png" alt="Paralisia Facial" />
+                </a>
+            </li>
+            <li>
+                <a href="http://otorrinopediatrica.org.br/" target="_blank">
+                    <img src="/Content/ParceriaBanner/banner_otorrino-635670234895867713.png" alt="Otorrino Pediatria" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.implantecoclear.org.br/" target="_blank">
+                    <img src="/Content/ParceriaBanner/banner_implante-635670235237989025.png" alt="Implante Coclear" />
+                </a>
+            </li>
+            <li>
+                <a href="http://reouvir.org.br/" target="_blank">
+                    <img src="/Content/ParceriaBanner/banner_reouvir-635670442091829419.jpg" alt="Ambulat&#243;rio de Sa&#250;de Auditiva Reouvir" />
+                </a>
+            </li>
+            <li>
+                <a href="http://www.otoneurologia.org.br/" target="_blank">
+                    <img src="/Content/ParceriaBanner/untitled-1-635767884787311079.jpg" alt="Otoneurologia" />
+                </a>
+            </li>
+            <li>
+                <a href="http://e-learningforl.com.br/" target="_blank">
+                    <img src="/Content/ParceriaBanner/banner_ead-637250566735822703.jpg" alt="E-Learnig Forl" />
+                </a>
+            </li>
+            <li>
+                <a href="http://e-learningforl.com.br/?p=1415" target="_blank">
+                    <img src="/Content/ParceriaBanner/banner_webinar-637250569151913089.jpg" alt="Webinar Forl" />
+                </a>
+            </li>
+    </ul>
+</div>
+<script src="/Scripts/calendar/jquery.eventCalendar.js" type="text/javascript"></script>
+<script>
+    $("#eventCalendarInline").eventCalendar({
+        /*jsonData: eventsInline, */
+        jsonDateFormat: 'human',
+        monthNames: ["Janeiro", "Fevereio", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+        dayNamesShort: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"]
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var $modal = $("#containerPopup");
+        var $botaoEsquerdo = $("#botaoEsquerdo", $modal);
+        var $botaoDireito = $("#botaoDireito", $modal);
+
+        $(".close").on("click", function () {
+            $modal.modal("hide");
+        });
+
+        $(".banner-wrapper").click(function (e) {
+            var $context = $(this);
+            var HabilitarPopup = $("#HabilitarPopup", $context).val();
+            if (HabilitarPopup == "True") {
+                e.preventDefault();
+                MontarModal($context);
+            }
+        });
+
+        function MontarModal($context) {
+
+            var RotuloBotaoEsquerdo = $("#RotuloBotaoPopup1", $context).val();
+            var RotuloBotaoDireito = $("#RotuloBotaoPopup2", $context).val();
+            var LinkBotaoEsquerdo = $("#LinkBotaoPopup1", $context).val();
+            var LinkBotaoDireito = $("#LinkBotaoPopup2", $context).val();
+
+            $botaoEsquerdo.text(RotuloBotaoEsquerdo);
+            $botaoEsquerdo.attr("href", LinkBotaoEsquerdo);
+            $botaoDireito.text(RotuloBotaoDireito);
+            $botaoDireito.attr("href", LinkBotaoDireito);
+            $modal.modal("show");
+        }
+    });
+</script>
+            </div>
+        </div>
+
+
+        <div class="rodape">
+            <ul class="rodape_contato">
+                <li><a href="https://pt-br.facebook.com/fundacao.otorrinolaringologia" class="facebook" target="_blank">Facebook</a></li>
+                <li><a href="https://www.instagram.com/fundacaootorrinolaringologia/" class="instagram" target="_blank">Instagram</a></li>
+                <li><a href="mailto:contato@forl.org.br" class="mail">contato@forl.org.br</a></li>
+                <li><a class="tel">(11)3068.9855</a></li>
+                <li><a href="#" class="map">Mapa do site</a></li>
+            </ul>
+            <p class="copyright">Copyright © 2022 - Fundação Otorrinolaringologia - Todos os Direitos Reservados</p>
+            <div class="gn1">
+                <a href="http://www.gn1.com.br" target="_blank">
+                    <img src="/Content/cssAreaAberta/imagens/logo_gn1.png" alt="GN1" />
+                </a>
+            </div>
+        </div>
+        <!-- FIM rodape -->
+    </div>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery('#demo1').skdslider({ delay: 15000, animationSpeed: 1000, showNextPrev: true, showPlayButton: true, autoSlide: true, animationType: 'fading' });
+
+            jQuery('#responsive').change(function () {
+                $('#responsive_wrapper').width(jQuery(this).val());
+            });
+
+        });
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-61981182-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <!-- FIM site -->
+</body>
+<!-- InstanceEnd -->
+</html>
